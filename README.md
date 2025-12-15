@@ -1,42 +1,26 @@
 ### Как запустить проект:
 
-Клонировать репозиторий и перейти в него в командной строке:
-
-```
-git clone 
-```
-
-```
 cd what_to_watch
-```
-
-Cоздать и активировать виртуальное окружение:
-
-```
-python3 -m venv venv
-```
-
-```
-source venv/bin/activate
-```
-или для пользователей Windows
-
-```
-source env/Scripts/activate
-```
-
-Установить зависимости из файла requirements.txt:
-
-```
-python3 -m pip install --upgrade pip
-```
-
-```
+python -m venv venv
+source venv/Scripts/activate
+python -m pip install --upgrade pip
 pip install -r requirements.txt
-```
 
 Запустить проект:
-
 ```
 flask run
 ```
+pip install flask-sqlalchemy==3.1.1 
+
+dialect+driver://username:password@host:port/database 
+
+flask shell 
+db.create_all()
+
+opinion_1 = Opinion(title='Джой', text='Фильм обязателен к просмотру в ситуациях, когда кажется, что выхода нет, и всё летит в тартарары. Главная героиня придумала самоотжимающуюся швабру (невесть какое изобретение, казалось бы) и двигала свою идею всеми мыслимыми и немыслимыми путями. Да и актёрский состав интересен. Где ещё увидишь вместе Дженифер Лоуренс, Роберта де Ниро и Брэдли Купера.')
+db.session.add(opinion_1)
+db.session.commit()
+
+
+# Применять только символы из набора ASCII? Нет!
+app.json.ensure_ascii = False 
