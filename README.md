@@ -24,3 +24,10 @@ db.session.commit()
 
 # Применять только символы из набора ASCII? Нет!
 app.json.ensure_ascii = False 
+
+pip install Flask-WTF==1.2.1
+
+pip install Flask-Migrate==4.0.7 
+flask db init
+flask db migrate -m "added added_by field" 
+flask db upgrade
