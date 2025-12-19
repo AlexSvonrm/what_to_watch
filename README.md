@@ -6,6 +6,9 @@ source venv/Scripts/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 
+python -m venv venv
+source venv/Scripts/activate
+
 Запустить проект:
 ```
 flask run
@@ -31,3 +34,8 @@ pip install Flask-Migrate==4.0.7
 flask db init
 flask db migrate -m "added added_by field" 
 flask db upgrade
+
+pip install requests==2.32.3 
+
+pip install "flask[async]==3.0.2" 
+pip install aiohttp==3.10.3 
